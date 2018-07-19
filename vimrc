@@ -34,6 +34,7 @@ filetype plugin indent on    " required
 " Shawn's Configurations
 " -----------------------------
 syntax enable                   " Enable syntax processing
+let g:solarized_termtrans = 1   " Make background trasnparent
 set background=dark             " Set background of solarized
 colorscheme solarized           " Set color scheme
 set autoindent                  " Auto indent
@@ -55,9 +56,6 @@ set shiftwidth=4                " Set indentation of <> to 4
 set expandtab                   " Tabs are spaces
 set fileformat=unix             " Store the file as unix
 
-" File Explorer Settings
-" let g:netrw_liststyle = 3       " File Explorer tree mode
-" let g:netrw_banner = 0          " Remove banner
 
 " Web Development Settings
 au BufNewFile,BufRead *.js,*.jsx,*.html,*.css,*.json,*.yml
