@@ -24,8 +24,6 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'craigemery/vim-autotag'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-vinegar'
-
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -56,6 +54,10 @@ set shiftwidth=4                " Set indentation of <> to 4
 set expandtab                   " Tabs are spaces
 set fileformat=unix             " Store the file as unix
 
+" Cursor Config
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " Web Development Settings
 au BufNewFile,BufRead *.js,*.jsx,*.html,*.css,*.json,*.yml
@@ -96,4 +98,4 @@ python import sys; sys.path.append("/Library/Python/2.7/site-packages")
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
-set laststatus=2            " Set to always show powerline
+set laststatus=2            " Set to always show powerl
