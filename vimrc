@@ -17,13 +17,15 @@ Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'craigemery/vim-autotag'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-vinegar'
+Plugin 'elixir-editors/vim-elixir'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -59,20 +61,20 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+
 " Web Development Settings
-au BufNewFile,BufRead *.js,*.jsx,*.html,*.css,*.json,*.yml
+au BufNewFile,BufRead *.js,*.jsx,*.ts,*.tsx,*.html,*.css,*.json,*.yml
     \ setlocal tabstop=2 |
     \ setlocal softtabstop=2 |
     \ setlocal shiftwidth=2 |
-
-" Simplify Split Navigations·
+    
+    
+" Simplify Split Navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" JSX Plugin settings
-let g:jsx_ext_required = 0
 
 " Linting
 set statusline+=%#warningmsg#
@@ -85,6 +87,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_enable_elixir_checker = 1
+let g:syntastic_elixir_checkers = ['elixir']
 
 " ctags
 set tags=tags;/
@@ -98,4 +102,4 @@ python import sys; sys.path.append("/Library/Python/2.7/site-packages")
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
-set laststatus=2            " Set to always show powerl
+set laststatus=2            " Set to always show powerline
