@@ -15,7 +15,7 @@ call plug#end()
 " Shawn's Configurations
 " -----------------------------
 syntax enable                   " Enable syntax processing
-set background=dark             " Set background of solarized
+set background=dark             " Set background
 colorscheme default             " Set color scheme
 set autoindent                  " Auto indent
 set textwidth=79                " Make it PEP 8·
